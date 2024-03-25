@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ITEM NAME</th>
+                <th>BRAND</th>
+                <th>SIZE</th>
+                <th>IMAGE</th>
+                <th>DISCOUNT</th>
+                <th>PRICE</th>
+                <th>ARRIVAL STATUS</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <% if (data.length > 0) { %>
+                <% for (let i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= data[i].id %></td>
+                        <td><%= data[i].item_name %></td>
+                        <td><%= data[i].brand %></td>
+                        <td><%= data[i].size %></td>
+                        <td><%= data[i].image %></td>
+                        <td><%= data[i].discount %></td>
+                        <td><%= data[i].price %></td>
+                        <td><%= data[i].arrival_status %></td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="8">No data available</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    
+    </table>
+</body>
+</html>

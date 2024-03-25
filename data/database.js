@@ -30,3 +30,10 @@ export const addWomenItem = async (oWomen) => {
     );
     return result[0];
 }
+
+
+export const getAllMenItems = async () => {
+    const result = await pool.query('SELECT * FROM men')
+    console.log(result)
+    return result[0];
+}

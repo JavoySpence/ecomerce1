@@ -2,6 +2,8 @@
    background-color:#DAF7A6;
    height: 45rem;
    width:  100%;
+   margin-top: 2rem;
+ 
 }
 
 #homeImage{
@@ -52,6 +54,15 @@ a{
     margin-left: 24rem; 
     width: 35rem;
     margin-top: 1rem;
+}
+
+#searchInputDiv{
+   position: fixed;
+   top: 0;
+   background-color: gray;
+   width: 100%;
+   z-index:600;
+   height: 3.9rem;
 }
 
 /* #search_btn {
