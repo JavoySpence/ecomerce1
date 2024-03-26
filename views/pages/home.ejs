@@ -53,15 +53,17 @@
 <!-- women/women.ejs -->
 
 
-<div class="container-lg">
+<div class="container-lg" style="margin-left: 7rem;">
 
     <div class="container2" style="display: flex;">
-        <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; margin-top: 7rem; margin-left: 5.3rem;">
+        <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; margin-top: 7rem;">
             <% if (data && data.length) { %>
                 <% data.forEach(function(item) { %>
                     <div class="card" style="flex: 0 0 calc(80% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
-                        <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 160px; object-fit: cover; border-radius: 30px; margin-top: 2rem;">
-                        <h5 style="margin-top: 2rem;"  class="card-title"> <%= item.brand %></h5>
+                        <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 159px; object-fit: cover; border-radius: 30px; margin-top: 2rem;">
+                        <h5 style="margin-top: 3rem; margin-left: 6rem;"  class="card-title"> <%= item.brand %></h5>
+    
+                        <button type="button"  class="btn btn-primary">MORE INFO</button>
                     </div>
                 <% }); %>
             <% } else { %>
@@ -74,7 +76,10 @@
                 <% menData.forEach(function(item) { %>
                     <div class="card" style="flex: 0 0 calc(80% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
                         <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 30px;">
-                        <h5 class="card-title"> <%= item.brand %></h5>
+                        <h5  style="margin-top: 2rem; margin-left: 6rem;" class="card-title"> <%= item.brand %></h5>
+    
+                        <button type="button" class="btn btn-primary" onclick="window.location.href = '/singleMenItem/ <%= data[0].id %>'">MORE INFO</button>
+
                     </div>
                 <% }); %>
             <% } else { %>
@@ -85,9 +90,11 @@
         <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 7rem;"> 
             <% if (childrenData && childrenData.length) { %>
                 <% childrenData.forEach(function(item) { %>
-                    <div class="card" style="flex: 0 0 calc(33.33% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
+                    <div class="card" style="flex: 0 0 calc(80% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
                         <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 30px;">
-                        <h5 class="card-title"> <%= item.brand %></h5>
+                        <h5 style="margin-top: 2rem; margin-left: 6rem;" class="card-title"> <%= item.brand %></h5>
+    
+                        <button type="button" class="btn btn-primary">MORE INFO</button>
                     </div>
                 <% }); %>
             <% } else { %>
@@ -95,6 +102,8 @@
             <% } %>
         </div>
     </div>
+    
+    
     
     </div>
     

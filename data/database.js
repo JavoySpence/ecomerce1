@@ -69,6 +69,13 @@ export const getAllMenItems = async () => {
 };
 
 
+export const singleMenItem = async (id) => {
+    const result = await pool.query('SELECT * FROM men where id = ?', [id])
+    console.log(result)
+    return result[0];
+}
+
+
 // ===================================================================================================================
 // CHILDREN
 // ===================================================================================================================
@@ -84,12 +91,12 @@ export const getAllChildren = async (limit = 1, offset = 0) => {
 
 
 export  const getAllChildrenCount = async () => {
-    const result =  await pool.query('SELECT COUNT(*) AS itemCount FROM childrenn');
+    const result =  await pool.query('SELECT COUNT(*) AS itemCount FROM children');
     return result[0].itemCount;
 };
 
 export const addChildrenItem = async (oChildren) => {
-    const result = await pool.query ('INSERT INTO men (item_name, brand, size, image, discount, price, arrival_status) VALUES(?, ?, ?, ?, ?, ?, ?)',
+    const result = await pool.query ('INSERT INTO children (item_name, brand, size, image, discount, price, arrival_status) VALUES(?, ?, ?, ?, ?, ?, ?)',
     [oChildren.item_name, oChildren.brand, oChildren.size, oChildren.image, oChildren.discount, oChildren.price, oChildren.arrival_status]
     );
     return result[0];

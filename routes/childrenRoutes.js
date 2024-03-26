@@ -29,12 +29,17 @@ childrenRoutes.get('/childrenInputs', async (req, res) => {
 });
 
 
+// childrenRoutes.get('/childrenPage', async (req, res) => {
+//      const 
+// })
 
-childrenRoutes.get('/childrenPage', async (req, res) => {
-    const menItemList = await getAllMenItems()
-    console.log(menItemList)
-    res.render('children/childrenPage', {data: menItemList});
-})
+
+
+// childrenRoutes.get('/childrenPage', async (req, res) => {
+//     const menItemList = await getAllMenItems()
+//     console.log(menItemList)
+//     res.render('children/childrenPage', {data: menItemList});
+// })
 
 
 export default childrenRoutes;

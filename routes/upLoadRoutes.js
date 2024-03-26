@@ -167,7 +167,7 @@ uploadRoutes.post('/newChildrenItem', async (req, res) => {
 
         const result = await addChildrenItem(newEntry);
 
-        res.redirect('/');
+        res.redirect('/allChildrenItems');
     } catch (error) {
         console.error(error);
         res.status(500).json({ success: false, message: error.message });
