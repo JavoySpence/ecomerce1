@@ -55,19 +55,52 @@
 
 <div class="container-lg">
 
+    <div class="container2" style="display: flex;">
+        <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; margin-top: 7rem; margin-left: 5.3rem;">
+            <% if (data && data.length) { %>
+                <% data.forEach(function(item) { %>
+                    <div class="card" style="flex: 0 0 calc(80% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
+                        <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 160px; object-fit: cover; border-radius: 30px; margin-top: 2rem;">
+                        <h5 style="margin-top: 2rem;"  class="card-title"> <%= item.brand %></h5>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+        </div>
     
-    <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 10px;  margin-top: 7rem; margin-left: 6rem;">
-        <% if (data && data.length) { %>
-            <% data.forEach(function(item) { %>
-                <div class="card" style="display: inline-block; width: 18rem;">
-                    <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 30px;">
-                    <h5 class="card-title">ITEM: <%= item.item_name %></h5>
-                </div>
-            <% }); %>
-        <% } else { %>
-            <p>No data available</p>
-        <% } %>
+        <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 7rem;"> 
+            <% if (menData && menData.length) { %>
+                <% menData.forEach(function(item) { %>
+                    <div class="card" style="flex: 0 0 calc(80% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
+                        <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 30px;">
+                        <h5 class="card-title"> <%= item.brand %></h5>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+        </div>
+    
+        <div class="card-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 7rem;"> 
+            <% if (childrenData && childrenData.length) { %>
+                <% childrenData.forEach(function(item) { %>
+                    <div class="card" style="flex: 0 0 calc(33.33% - 0.5rem); margin-right: 1rem; margin-bottom: 1rem;"> 
+                        <img src="uploads/<%= item.image %>" class="card-img-top" alt="Meal Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 30px;">
+                        <h5 class="card-title"> <%= item.brand %></h5>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+        </div>
     </div>
+    
+    </div>
+    
+    
+    
+    
     
     
 </div>
